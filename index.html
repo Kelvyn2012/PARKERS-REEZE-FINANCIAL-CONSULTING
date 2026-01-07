@@ -450,6 +450,129 @@
             color: #1e3a5f;
         }
 
+        /* Resources Section */
+        .resources {
+            background: #f8fafc;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 4px solid #00d4ff;
+        }
+
+        .resource-card:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+        }
+
+        .resource-card h4 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .resource-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-card .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.75rem 1.5rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .resource-card .resource-link:hover {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        /* Documents Section */
+        .documents {
+            background: white;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .document-card {
+            background: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .document-card:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .document-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .document-card h4 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .document-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .document-badge {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1e3a5f;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #1e3a5f;
+            color: white;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #00d4ff;
+            color: #1e3a5f;
+            transform: scale(1.05);
+        }
+
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -734,6 +857,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#links">Industry Links</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#documents">Documents</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -829,7 +954,7 @@
                     <p>We support clients in understanding their financial position, modelling future scenarios, and building strategies that improve stability and long-term performance.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>Financial Planning & Analysis</div>
+                    <div>📈 Financial Planning & Analysis</div>
                 </div>
             </div>
 
@@ -839,7 +964,7 @@
                     <p>We use data-driven methods to uncover financial patterns, identify risks, and highlight opportunities for operational improvement and growth.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>Data-Driven Insights</div>
+                    <div>💻 Data-Driven Insights</div>
                 </div>
             </div>
 
@@ -849,7 +974,105 @@
                     <p>We help clients navigate the digital transformation of finance — from digital budgeting tools to understanding financial technology trends that impact decision-making.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>Digital Finance Solutions</div>
+                    <div>🌐 Digital Finance Solutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Resources Section -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2>Useful Resources</h2>
+            <p class="section-intro">Essential links to leading financial consulting resources, industry insights, and professional guidance.</p>
+            
+            <div class="resource-card">
+                <h4>1. EY — UK (Ernst & Young)</h4>
+                <p>EY is one of the UK's leading financial and professional services firms, offering insights into consulting, finance transformation, and strategic decision-making. Their website includes industry reports, regulatory updates, and guidance on building financial resilience.</p>
+                <a href="https://www.ey.com/en_uk" target="_blank" class="resource-link">
+                    Visit EY UK →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h4>2. Deloitte UK</h4>
+                <p>Deloitte provides audit, consulting, financial advisory, and risk management services. Their site features research on financial transformation, digital finance, economic trends, and sector-specific insights relevant to modern financial consulting.</p>
+                <a href="https://www.deloitte.com/uk/en.html" target="_blank" class="resource-link">
+                    Visit Deloitte UK →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h4>3. Consultancy UK — Top Consulting Firms Ranking</h4>
+                <p>This site ranks the top consulting firms in the UK across multiple specialisations, including finance, data analytics, and digital strategy. It offers industry analysis, firm comparisons, and sector insights useful for understanding competitive positioning.</p>
+                <a href="https://www.consultancy.uk/rankings/2025" target="_blank" class="resource-link">
+                    Visit Consultancy UK →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h4>4. MConsultingPrep — Finance Consulting Overview</h4>
+                <p>This site provides global rankings of finance consulting firms and explains the key services offered in financial consulting. It is useful for understanding industry standards, methodologies, and expectations for finance consultants.</p>
+                <a href="https://mconsultingprep.com/top-finance-consulting-firms" target="_blank" class="resource-link">
+                    Visit MConsultingPrep →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h4>5. Digital Reference — UK Investment Consulting Insights</h4>
+                <p>Digital Reference highlights UK investment consulting firms, showcasing how specialists support private equity, corporate finance, and portfolio strategy. This site is ideal for understanding trends in value creation and financial advisory work.</p>
+                <a href="https://www.digitalreference.co/insights/finance-professionals/investment-consulting-services-in-the-uk" target="_blank" class="resource-link">
+                    Visit Digital Reference →
+                </a>
+            </div>
+
+            <div class="resource-card">
+                <h4>6. The Consulting Report — Top Financial Services Consultants</h4>
+                <p>This site profiles top financial services consultants and leaders shaping the financial industry. It gives insight into the skills, innovations, and strategic approaches used by leading financial consultants.</p>
+                <a href="https://www.theconsultingreport.com/the-top-25-financial-services-consultants-and-leaders-of-2025/" target="_blank" class="resource-link">
+                    Visit The Consulting Report →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="documents" id="documents">
+        <div class="container">
+            <h2>Downloadable Documents</h2>
+            <p class="section-intro">Access our comprehensive financial consulting documents, reports, and resources.</p>
+            
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">📄</div>
+                    <div class="document-badge">Original Document</div>
+                    <h4>Financial Consulting Overview</h4>
+                    <p>This original document introduces the core principles of financial consulting, including FP&A, finance transformation, and data-driven advisory approaches. It reflects your consultancy's branding and theme.</p>
+                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual document link here.'); return false;">Download Word Doc</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📊</div>
+                    <div class="document-badge">External Source</div>
+                    <h4>External Financial Report</h4>
+                    <p>This PDF represents an external financial report, typically used to analyse financial trends, market performance, or sector insights. A comprehensive guide to industry standards.</p>
+                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual PDF link here.'); return false;">Download PDF</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📑</div>
+                    <div class="document-badge">External Source</div>
+                    <h4>External Finance Presentation</h4>
+                    <p>A sample external presentation containing insights into financial strategy, finance transformation, or consulting best practices. Ideal for linking industry information or thought-leadership decks.</p>
+                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual PowerPoint link here.'); return false;">Download PowerPoint</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">📈</div>
+                    <div class="document-badge">External Source</div>
+                    <h4>External Financial Data Spreadsheet</h4>
+                    <p>This spreadsheet contains sample financial data (years, revenues) representing the kind of dataset used in financial analysis, forecasting, and FP&A work.</p>
+                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual Excel file link here.'); return false;">Download Excel File</a>
                 </div>
             </div>
         </div>
@@ -1041,7 +1264,7 @@
             <h2>Why Choose Us?</h2>
             <div class="why-grid">
                 <div class="why-item">
-                    <div class="icon"></div>
+                    <div class="icon">🎯</div>
                     <h4>Strategic Thinking</h4>
                     <p>We combine strategic thinking with modern analytical tools to deliver exceptional results.</p>
                 </div>
@@ -1073,7 +1296,6 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h4>Student Contact Information</h4>
-                    
                     <div class="info-item">
                         <strong>Student ID:</strong>
                         <span>24142784</span>
