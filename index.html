@@ -201,6 +201,38 @@
             font-size: 1.1rem;
             text-align: center;
             padding: 2rem;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .about-image .placeholder-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-credit {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+
+        .image-credit a {
+            color: #00d4ff;
+            text-decoration: none;
         }
 
         /* USP Section */
@@ -364,6 +396,22 @@
             font-size: 1rem;
             text-align: center;
             padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .specialist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .specialist-image .placeholder-text {
+            position: relative;
+            z-index: 1;
         }
 
         /* Videos Section */
@@ -571,6 +619,96 @@
             background: #00d4ff;
             color: #1e3a5f;
             transform: scale(1.05);
+        }
+
+        /* Image Gallery Section */
+        .image-gallery {
+            background: #f8fafc;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #00426a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .gallery-image .placeholder-text {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-info h4 {
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .gallery-info p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .gallery-source {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00d4ff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .gallery-source a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+
+        .gallery-source a:hover {
+            color: #1e3a5f;
         }
 
         .video-grid {
@@ -860,6 +998,7 @@
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#documents">Documents</a></li>
                 <li><a href="#videos">Videos</a></li>
+                <li><a href="#images">Images</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -888,7 +1027,14 @@
                     <p>Our background in financial analysis, planning, and advisory work allows us to bridge the gap between raw numbers and strategic decision-making. We combine professional knowledge with modern financial tools to provide guidance that is both accurate and practical.</p>
                 </div>
                 <div class="about-image">
-                    <div>📊 Professional Financial Team<br><small>Expert Consultants Ready to Help</small></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop"
+                        alt="Financial Team Meeting"
+                        id="aboutImage">
+                    <div class="placeholder-text"><br><small></small></div>
+                    <div class="image-credit" style="display: none;" id="aboutCredit">
+                        Photo: <a href="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" target="_blank">unsplash</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -954,7 +1100,11 @@
                     <p>We support clients in understanding their financial position, modelling future scenarios, and building strategies that improve stability and long-term performance.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>📈 Financial Planning & Analysis</div>
+                    <img src="https://images.unsplash.com/photo-1758518729841-308509f69a7f?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Financial Planning" id="specialist1Image">
+                    <div class="placeholder-text"></div>
+                    <div class="image-credit" style="display: none;" id="specialist1Credit">
+                        Photo: <a href="#" target="_blank">Source</a>
+                    </div>
                 </div>
             </div>
 
@@ -964,7 +1114,11 @@
                     <p>We use data-driven methods to uncover financial patterns, identify risks, and highlight opportunities for operational improvement and growth.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>💻 Data-Driven Insights</div>
+                    <img src="https://media.istockphoto.com/id/2214259306/photo/focused-woman-analyzing-data-on-a-blue-screen.jpg?s=1024x1024&w=is&k=20&c=AMKZP8qvSB76Oul5YIdkGPP1jJEK-_9VFYakKfk3kf8=" alt="Data Analytics" id="specialist2Image">
+                    <div class="placeholder-text"></div>
+                    <div class="image-credit" style="display: none;" id="specialist2Credit">
+                        Photo: <a href="#" target="_blank">Source</a>
+                    </div>
                 </div>
             </div>
 
@@ -974,7 +1128,11 @@
                     <p>We help clients navigate the digital transformation of finance — from digital budgeting tools to understanding financial technology trends that impact decision-making.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>🌐 Digital Finance Solutions</div>
+                    <img src="https://plus.unsplash.com/premium_photo-1661311854942-81b6b5d12198?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Digital Finance" id="specialist3Image">
+                    <div class="placeholder-text"></div>
+                    <div class="image-credit" style="display: none;" id="specialist3Credit">
+                        Photo: <a href="#" target="_blank">Source</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1269,19 +1427,209 @@
                     <p>We combine strategic thinking with modern analytical tools to deliver exceptional results.</p>
                 </div>
                 <div class="why-item">
-                    <div class="icon"></div>
+                    <div class="icon">💎</div>
                     <h4>Clear Communication</h4>
                     <p>We prioritise clear communication and transparency in everything we do.</p>
                 </div>
                 <div class="why-item">
-                    <div class="icon"></div>
+                    <div class="icon">📊</div>
                     <h4>Measurable Outcomes</h4>
                     <p>We focus on delivering measurable, meaningful outcomes that drive real change.</p>
                 </div>
                 <div class="why-item">
-                    <div class="icon"></div>
+                    <div class="icon">🤝</div>
                     <h4>Personalised Approach</h4>
                     <p>We take a personalised approach — your goals shape our strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section class="image-gallery" id="images">
+        <div class="container">
+            <h2>Financial Consulting Image Gallery</h2>
+            <p class="section-intro">Professional images showcasing financial consulting, analysis, and strategic planning in action.</p>
+            
+            <div class="gallery-grid">
+                <!-- Image 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Financial Consulting Meeting" style="display: none;" id="gallery1">
+                        <div class="placeholder-text">Add Image: Financial Consulting Meeting</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">Shutterstock</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Financial Consulting — Shutterstock</h4>
+                        <p>A professional consulting meeting with charts and financial reports displayed on a desk.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">View on Shutterstock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Business Finance Analysis" style="display: none;" id="gallery2">
+                        <div class="placeholder-text">Add Image: Business Finance Analysis</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">iStock</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Business Finance Analysis — iStock</h4>
+                        <p>Business advisors reviewing revenue, profit, and analytics on a tablet during a financial planning session.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">View on iStock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Team Meeting Financial Strategy" style="display: none;" id="gallery3">
+                        <div class="placeholder-text">Add Image: Team Meeting on Strategy</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">Dreamstime</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Team Meeting on Financial Strategy — Dreamstime</h4>
+                        <p>A business team collaborating on financial statements and performance metrics in an office setting.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">View on Dreamstime</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Financial Analysis Planning" style="display: none;" id="gallery4">
+                        <div class="placeholder-text">Add Image: Financial Analysis & Planning</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">Getty Images</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Financial Analysis & Planning — Getty Images</h4>
+                        <p>Professionals analysing digital charts and financial dashboards during strategic planning.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">View on Getty Images</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Consulting Icon Set" style="display: none;" id="gallery5">
+                        <div class="placeholder-text">Add Image: Consulting Icon Set</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">Shutterstock</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Consulting Icon Set — Shutterstock</h4>
+                        <p>A set of financial consulting icons including expense trackers, balance sheets, and financial reports.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">View on Shutterstock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Financial Consulting Vector" style="display: none;" id="gallery6">
+                        <div class="placeholder-text">Add Image: Financial Consulting Vector</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.vectorstock.com/royalty-free-vector/financial-consulting-concept-consultant-vector-28778833" target="_blank">VectorStock</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Financial Consulting Vector — VectorStock</h4>
+                        <p>A modern illustration of a consultant presenting financial data on a large screen.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.vectorstock.com/royalty-free-vector/financial-consulting-concept-consultant-vector-28778833" target="_blank">View on VectorStock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Consulting Analysis Tools" style="display: none;" id="gallery7">
+                        <div class="placeholder-text">Add Image: Consulting & Analysis</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://pixabay.com/images/search/financial%20consulting/" target="_blank">Pixabay</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Consulting & Analysis — Pixabay (Free)</h4>
+                        <p>A royalty-free image showing financial analysis tools such as calculators, charts, and planners.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://pixabay.com/images/search/financial%20consulting/" target="_blank">View on Pixabay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 8 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Business Meeting Finance Planning" style="display: none;" id="gallery8">
+                        <div class="placeholder-text">Add Image: Business Meeting</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.vecteezy.com/free-photos/financial-consulting" target="_blank">Vecteezy</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Business Meeting for Finance Planning — Vecteezy (Free)</h4>
+                        <p>Consultants reviewing documents, graphs, and financial insights in a collaborative office space.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.vecteezy.com/free-photos/financial-consulting" target="_blank">View on Vecteezy</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 9 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Finance Team Reviewing Data" style="display: none;" id="gallery9">
+                        <div class="placeholder-text">Add Image: Finance Team Review</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.shutterstock.com/search/consulting-tax-finance" target="_blank">Shutterstock</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Finance Team Reviewing Data — Shutterstock</h4>
+                        <p>Two consultants reviewing financial projections, budgets, and investment planning documents.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.shutterstock.com/search/consulting-tax-finance" target="_blank">View on Shutterstock</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image 10 -->
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="" alt="Financial Consultant at Laptop" style="display: none;" id="gallery10">
+                        <div class="placeholder-text">Add Image: Consultant Working</div>
+                        <div class="image-credit" style="display: none;">
+                            Photo: <a href="https://www.pexels.com/search/Financial%20consultant/" target="_blank">Pexels</a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Financial Consultant Working at Laptop — Pexels (Free)</h4>
+                        <p>A consultant analysing financial data on a laptop in a clean, modern office environment.</p>
+                        <div class="gallery-source">
+                            🔗 <a href="https://www.pexels.com/search/Financial%20consultant/" target="_blank">View on Pexels</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1297,12 +1645,16 @@
                 <div class="contact-info">
                     <h4>Student Contact Information</h4>
                     <div class="info-item">
+                        <strong>Student Name:</strong>
+                        <span>Regina Nelson</span>
+                    </div>
+                    <div class="info-item">
                         <strong>Student ID:</strong>
                         <span>24142784</span>
                     </div>
                     <div class="info-item">
                         <strong>Email:</strong>
-                        <span>rn25aao@herts.ac.uk</span>
+                        <span>24142784@herts.ac.uk</span>
                     </div>
                 </div>
 
