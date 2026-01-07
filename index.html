@@ -371,6 +371,85 @@
             background: #f8fafc;
         }
 
+        /* Industry Links Section */
+        .industry-links {
+            background: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .link-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #00d4ff;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left-color: #1e3a5f;
+        }
+
+        .link-card .company-number {
+            background: #1e3a5f;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-card h4 {
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .link-card p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .link-card .badge {
+            background: #00d4ff;
+            color: #1e3a5f;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .link-card a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            word-break: break-all;
+        }
+
+        .link-card a:hover {
+            color: #1e3a5f;
+        }
+
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -654,6 +733,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#links">Industry Links</a></li>
                 <li><a href="#videos">Videos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -749,7 +829,7 @@
                     <p>We support clients in understanding their financial position, modelling future scenarios, and building strategies that improve stability and long-term performance.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>📈 Financial Planning & Analysis</div>
+                    <div>Financial Planning & Analysis</div>
                 </div>
             </div>
 
@@ -759,7 +839,7 @@
                     <p>We use data-driven methods to uncover financial patterns, identify risks, and highlight opportunities for operational improvement and growth.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>💻 Data-Driven Insights</div>
+                    <div>Data-Driven Insights</div>
                 </div>
             </div>
 
@@ -769,7 +849,97 @@
                     <p>We help clients navigate the digital transformation of finance — from digital budgeting tools to understanding financial technology trends that impact decision-making.</p>
                 </div>
                 <div class="specialist-image">
-                    <div>🌐 Digital Finance Solutions</div>
+                    <div>Digital Finance Solutions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Links Section -->
+    <section class="industry-links" id="links">
+        <div class="container">
+            <h2>Top UK Financial Consulting Firms</h2>
+            <p class="section-intro">Explore leading financial consulting companies in the UK, ranked among the top for their expertise, innovation, and client impact.</p>
+            
+            <div class="links-grid">
+                <div class="link-card">
+                    <div class="company-number">1</div>
+                    <h4>McKinsey & Company UK</h4>
+                    <div class="badge">Top Ranked</div>
+                    <p>McKinsey's UK site provides insights on financial services strategy, digital transformation, risk, and regulatory change. Features research reports, industry analyses, and case studies tailored to UK banks and insurers.</p>
+                    <a href="https://www.mckinsey.com/uk" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">2</div>
+                    <h4>Boston Consulting Group (BCG) UK</h4>
+                    <div class="badge">Top Ranked</div>
+                    <p>BCG's UK portal covers financial services consulting, including fintech, payments, risk, and operational transformation. The site features thought leadership, industry forecasts, and client impact stories.</p>
+                    <a href="https://www.bcg.com/en-gb" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">3</div>
+                    <h4>Deloitte UK — Financial Advisory</h4>
+                    <div class="badge">Top Provider</div>
+                    <p>Deloitte's UK site offers corporate finance, restructuring, risk advisory, and regulatory consulting. Includes industry insights, service breakdowns, and guidance for financial institutions.</p>
+                    <a href="https://www2.deloitte.com/uk/en.html" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">4</div>
+                    <h4>PwC UK — Financial Services</h4>
+                    <div class="badge">Featured Firm</div>
+                    <p>PwC UK provides consulting across deals, tax, audit, and financial risk. The site includes research publications, regulatory updates, and sector-specific insights for banks, insurers, and asset managers.</p>
+                    <a href="https://www.pwc.co.uk" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">5</div>
+                    <h4>EY UK — Financial Services</h4>
+                    <div class="badge">Top Firm</div>
+                    <p>EY's UK site focuses on financial risk, compliance, wealth management, and transaction advisory. Features industry reports, regulatory guidance, and transformation case studies.</p>
+                    <a href="https://www.ey.com/en_uk" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">6</div>
+                    <h4>KPMG UK — Financial Advisory</h4>
+                    <div class="badge">Leading Firm</div>
+                    <p>KPMG UK provides services in corporate finance, restructuring, audit, and financial risk. Their site features insights on UK regulatory changes, market trends, and sector-specific consulting.</p>
+                    <a href="https://kpmg.com/uk" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">7</div>
+                    <h4>Accenture UK — Financial Services</h4>
+                    <div class="badge">Recognized</div>
+                    <p>Accenture UK offers consulting in digital banking, payments, cybersecurity, cloud transformation, and financial operations. Includes case studies, innovation research, and technology-driven insights.</p>
+                    <a href="https://www.accenture.com/gb-en" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">8</div>
+                    <h4>Oliver Wyman UK</h4>
+                    <div class="badge">Top Consultancy</div>
+                    <p>Oliver Wyman's UK site specializes in risk management, financial modelling, regulatory strategy, and insurance consulting. Features deep analytical reports and industry-leading research.</p>
+                    <a href="https://www.oliverwyman.com" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">9</div>
+                    <h4>Bain & Company UK</h4>
+                    <div class="badge">Top Ranked</div>
+                    <p>Bain UK focuses on private equity, banking, insurance, and performance improvement. Their site includes case studies, industry insights, and transformation frameworks used by major UK financial institutions.</p>
+                    <a href="https://www.bain.com/offices/london/" target="_blank">Visit Website →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="company-number">10</div>
+                    <h4>HewardMills</h4>
+                    <div class="badge">Boutique Specialist</div>
+                    <p>HewardMills is a UK-based consultancy specializing in financial compliance, data protection, and regulatory advisory. Their site highlights services in GDPR, governance, and risk management.</p>
+                    <a href="https://hewardmills.com" target="_blank">Visit Website →</a>
                 </div>
             </div>
         </div>
@@ -903,13 +1073,14 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h4>Student Contact Information</h4>
+                    
                     <div class="info-item">
                         <strong>Student ID:</strong>
                         <span>24142784</span>
                     </div>
                     <div class="info-item">
                         <strong>Email:</strong>
-                        <span>24142784@herts.ac.uk</span>
+                        <span>rn25aao@herts.ac.uk</span>
                     </div>
                 </div>
 
