@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARKERS & REEZE FINANCIAL CONSULTING | Strategic Insight & Results</title>
+    <title>PARKERS & REEZE FINANCIAL CONSULTING</title>
     <style>
         * {
             margin: 0;
@@ -37,6 +37,10 @@
             align-items: center;
         }
 
+        nav .logo-container {
+            cursor: pointer;
+        }
+
         nav .logo {
             font-size: 1.4rem;
             font-weight: 700;
@@ -54,7 +58,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
 
         nav a {
@@ -62,14 +66,58 @@
             text-decoration: none;
             transition: all 0.3s;
             font-weight: 500;
-            position: relative;
+            cursor: pointer;
+            padding: 0.5rem 0;
         }
 
         nav a:hover {
             color: #00d4ff;
         }
 
-        /* Hero Section */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hide all pages except active */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #00426a 100%);
+            color: white;
+            padding: 5rem 5% 3rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Hero Section (Home page) */
         .hero {
             background: linear-gradient(135deg, #1e3a5f 0%, #00426a 100%);
             color: white;
@@ -118,6 +166,8 @@
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            cursor: pointer;
+            border: none;
         }
 
         .cta-button:hover {
@@ -141,6 +191,10 @@
             padding: 5rem 5%;
         }
 
+        section:nth-child(even) {
+            background: #f8fafc;
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -148,7 +202,7 @@
 
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #1e3a5f;
             font-weight: 700;
         }
@@ -168,26 +222,37 @@
             text-align: center;
         }
 
-        /* About Section */
-        .about {
-            background: #f8fafc;
-        }
-
-        .about-grid {
+        /* Grid Layouts */
+        .grid-2 {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #4a5568;
-            line-height: 1.8;
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
         }
 
-        .about-image {
+        /* Cards */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        /* Images */
+        .image-placeholder {
             width: 100%;
             height: 450px;
             border-radius: 12px;
@@ -198,13 +263,10 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 2rem;
             position: relative;
         }
 
-        .about-image img {
+        .image-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -213,9 +275,11 @@
             left: 0;
         }
 
-        .about-image .placeholder-text {
+        .placeholder-text {
             position: relative;
             z-index: 1;
+            padding: 2rem;
+            text-align: center;
         }
 
         .image-credit {
@@ -235,99 +299,19 @@
             text-decoration: none;
         }
 
-        /* USP Section */
-        .usp {
-            background: white;
-        }
-
-        .usp-highlight {
-            text-align: center;
-            font-size: 1.8rem;
-            color: #00d4ff;
-            font-weight: 700;
-            margin-bottom: 3rem;
-        }
-
-        .usp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .usp-card {
-            background: #f8fafc;
-            padding: 2.5rem;
-            border-radius: 12px;
-            border-left: 5px solid #00d4ff;
-            transition: all 0.3s;
-        }
-
-        .usp-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .usp-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .usp-card h4 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .usp-card p {
-            color: #4a5568;
-            line-height: 1.7;
-        }
-
-        /* Services Section */
-        .services {
-            background: #f8fafc;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            margin-bottom: 1.5rem;
-            color: #1e3a5f;
-        }
-
-        .service-list {
+        /* Lists */
+        .styled-list {
             list-style: none;
-            margin-top: 1rem;
         }
 
-        .service-list li {
+        .styled-list li {
             padding: 0.7rem 0 0.7rem 2rem;
             position: relative;
             color: #4a5568;
             line-height: 1.6;
         }
 
-        .service-list li:before {
+        .styled-list li:before {
             content: "✓";
             position: absolute;
             left: 0;
@@ -336,13 +320,9 @@
             font-size: 1.2rem;
         }
 
-        /* Specialist Areas */
-        .specialist-areas {
-            background: white;
-        }
-
+        /* Specialist Cards */
         .specialist-card {
-            background: #f8fafc;
+            background: white;
             padding: 3rem;
             border-radius: 12px;
             margin-bottom: 2.5rem;
@@ -379,75 +359,25 @@
             flex-shrink: 0;
         }
 
-        .specialist-card p {
-            color: #4a5568;
-            line-height: 1.7;
-        }
-
         .specialist-image {
-            width: 100%;
             height: 250px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #00426a 0%, #1e3a5f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-            text-align: center;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
         }
 
-        .specialist-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .specialist-image .placeholder-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Videos Section */
-        .videos {
-            background: #f8fafc;
-        }
-
-        /* Industry Links Section */
-        .industry-links {
-            background: white;
-        }
-
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
+        /* Link Cards */
         .link-card {
-            background: #f8fafc;
+            background: white;
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid #00d4ff;
             transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
         }
 
         .link-card:hover {
             transform: translateX(5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left-color: #1e3a5f;
         }
 
-        .link-card .company-number {
+        .company-number {
             background: #1e3a5f;
             color: white;
             width: 40px;
@@ -461,21 +391,7 @@
             margin-bottom: 1rem;
         }
 
-        .link-card h4 {
-            color: #1e3a5f;
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .link-card p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .link-card .badge {
+        .badge {
             background: #00d4ff;
             color: #1e3a5f;
             padding: 0.4rem 0.8rem;
@@ -486,23 +402,7 @@
             margin-bottom: 1rem;
         }
 
-        .link-card a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-            word-break: break-all;
-        }
-
-        .link-card a:hover {
-            color: #1e3a5f;
-        }
-
-        /* Resources Section */
-        .resources {
-            background: #f8fafc;
-        }
-
+        /* Resource Cards */
         .resource-card {
             background: white;
             padding: 2.5rem;
@@ -518,51 +418,27 @@
             transform: translateY(-3px);
         }
 
-        .resource-card h4 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .resource-card p {
-            color: #4a5568;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .resource-card .resource-link {
+        .resource-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             color: #00d4ff;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
             padding: 0.75rem 1.5rem;
             background: #f8fafc;
             border-radius: 6px;
+            transition: all 0.3s;
         }
 
-        .resource-card .resource-link:hover {
+        .resource-link:hover {
             background: #1e3a5f;
             color: white;
         }
 
-        /* Documents Section */
-        .documents {
-            background: white;
-        }
-
-        .documents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
+        /* Document Cards */
         .document-card {
-            background: #f8fafc;
+            background: white;
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
@@ -578,30 +454,6 @@
         .document-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
-        }
-
-        .document-card h4 {
-            color: #1e3a5f;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .document-card p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .document-badge {
-            display: inline-block;
-            background: #00d4ff;
-            color: #1e3a5f;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
         }
 
         .download-btn {
@@ -621,103 +473,7 @@
             transform: scale(1.05);
         }
 
-        /* Image Gallery Section */
-        .image-gallery {
-            background: #f8fafc;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .gallery-item:hover {
-            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
-            transform: translateY(-5px);
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, #1e3a5f 0%, #00426a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .gallery-image .placeholder-text {
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .gallery-info {
-            padding: 1.5rem;
-        }
-
-        .gallery-info h4 {
-            color: #1e3a5f;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .gallery-info p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .gallery-source {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #00d4ff;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .gallery-source a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
-
-        .gallery-source a:hover {
-            color: #1e3a5f;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
+        /* Video Cards */
         .video-card {
             background: white;
             border-radius: 12px;
@@ -740,11 +496,6 @@
             justify-content: center;
             position: relative;
             cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .video-thumbnail:hover {
-            transform: scale(1.02);
         }
 
         .video-thumbnail img {
@@ -762,8 +513,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: white;
             transition: all 0.3s;
         }
 
@@ -782,84 +531,54 @@
             padding: 2rem;
         }
 
-        .video-info h4 {
-            color: #1e3a5f;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .video-info p {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
         .video-link {
             color: #00d4ff;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
         }
 
         .video-link:hover {
             color: #00b8e6;
         }
 
-        /* Why Choose Us */
-        .why-choose {
-            background: #1e3a5f;
-            color: white;
-        }
-
-        .why-choose h2 {
-            color: white;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .why-item {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
+        /* Gallery */
+        .gallery-item {
+            background: white;
             border-radius: 12px;
-            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.15);
         }
 
-        .why-item:hover {
-            background: rgba(255,255,255,0.15);
+        .gallery-item:hover {
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
             transform: translateY(-5px);
         }
 
-        .why-item .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .gallery-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #00426a 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .why-item h4 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-source {
             color: #00d4ff;
+            font-size: 0.85rem;
             font-weight: 600;
         }
 
-        .why-item p {
-            line-height: 1.6;
-            opacity: 0.95;
+        .gallery-source a {
+            color: #00d4ff;
+            text-decoration: none;
         }
 
-        /* Contact Section */
-        .contact {
-            background: white;
-        }
-
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -873,12 +592,6 @@
             border-radius: 12px;
         }
 
-        .contact-info h4 {
-            color: #1e3a5f;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
         .info-item {
             margin-bottom: 1.5rem;
         }
@@ -887,10 +600,6 @@
             display: block;
             color: #1e3a5f;
             margin-bottom: 0.3rem;
-        }
-
-        .info-item span {
-            color: #4a5568;
         }
 
         .map-container {
@@ -922,16 +631,7 @@
             opacity: 0.9;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -947,6 +647,7 @@
 
             nav ul li {
                 padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             nav ul.active {
@@ -957,8 +658,8 @@
                 display: block;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
+            .hero h1, .page-hero h1 {
+                font-size: 2rem;
             }
 
             .hero .tagline {
@@ -966,17 +667,29 @@
             }
 
             h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
-            .about-grid,
+            .grid-2,
             .specialist-card,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .video-grid {
+            .grid-3 {
                 grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .image-placeholder {
+                height: 300px;
+            }
+
+            .specialist-image {
+                height: 200px;
             }
         }
     </style>
@@ -985,98 +698,125 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div>
+            <div class="logo-container" onclick="showPage('home')">
                 <div class="logo">PARKERS & REEZE</div>
                 <div class="logo-tagline">Financial Consulting</div>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#links">Industry Links</a></li>
-                <li><a href="#resources">Resources</a></li>
-                <li><a href="#documents">Documents</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#images">Images</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a onclick="showPage('home')">Home</a></li>
+                <li><a onclick="showPage('about')">About</a></li>
+                <li><a onclick="showPage('services')">Services</a></li>
+                <li><a onclick="showPage('links')">Industry Links</a></li>
+                <li><a onclick="showPage('resources')">Resources</a></li>
+                <li><a onclick="showPage('documents')">Documents</a></li>
+                <li><a onclick="showPage('videos')">Videos</a></li>
+                <li><a onclick="showPage('images')">Images</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="tagline">Financial Clarity, Data-Driven Confidence</div>
-            <h1>Strategic Financial Insight.<br>Confident Decisions. Real Results.</h1>
-            <p>We specialise in transforming financial challenges into clear, strategic solutions. Our mission is to help organisations and individuals make confident, well-informed financial decisions that support long-term stability and sustainable growth.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-button">Book a Consultation</a>
-                <a href="#services" class="cta-button secondary">Explore Services</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>Who We Are</h2>
-            <div class="about-grid">
-                <div class="about-content">
-                    <p>We are a forward-thinking financial consulting team driven by analytical insight, strategic thinking, and a commitment to measurable results. Our expertise lies in understanding financial patterns, identifying risks and opportunities, and translating complex data into simple, actionable strategy.</p>
-                    <p>Our background in financial analysis, planning, and advisory work allows us to bridge the gap between raw numbers and strategic decision-making. We combine professional knowledge with modern financial tools to provide guidance that is both accurate and practical.</p>
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="container">
+                <div class="tagline">Financial Clarity, Data-Driven Confidence</div>
+                <h1>Strategic Financial Insight.<br>Confident Decisions. Real Results.</h1>
+                <p>We specialise in transforming financial challenges into clear, strategic solutions. Our mission is to help organisations and individuals make confident, well-informed financial decisions that support long-term stability and sustainable growth.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button" onclick="showPage('contact')">Book a Consultation</button>
+                    <button class="cta-button secondary" onclick="showPage('services')">Explore Services</button>
                 </div>
-                <div class="about-image">
-                    <img 
-                        src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop"
-                        alt="Financial Team Meeting"
-                        id="aboutImage">
-                    <div class="placeholder-text"><br><small></small></div>
-                    <div class="image-credit" style="display: none;" id="aboutCredit">
-                        Photo: <a href="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" target="_blank">unsplash</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 style="text-align: center;">Welcome to PARKERS & REEZE</h2>
+                <p class="section-intro">At our consultancy, we specialise in transforming financial complexity into clarity. Explore our services and discover how we can help you achieve financial clarity, build resilience, and create a strategy that works for your future.</p>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>🎯 Our Mission</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">To help organisations and individuals make confident, well-informed financial decisions that support long-term stability and sustainable growth.</p>
+                    </div>
+                    <div class="card">
+                        <h3>💡 Our Approach</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We combine analytical insight, strategic thinking, and a commitment to measurable results with modern financial tools.</p>
+                    </div>
+                    <div class="card">
+                        <h3>⭐ Our Promise</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">Clear, actionable strategy that bridges the gap between raw numbers and strategic decision-making.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- USP Section -->
-    <section class="usp">
-        <div class="container">
-            <h2>Our Unique Selling Point</h2>
-            <div class="usp-highlight">Insight-Driven Strategy With a Human Touch</div>
-            <p class="section-intro">What makes us different is our ability to blend technical financial expertise with a clear, supportive, and personalised approach. We don't just analyse numbers — we interpret them in ways that help our clients understand, plan, and take confident action.</p>
-            
-            <div class="usp-grid">
-                <div class="usp-card">
-                    <div class="icon"></div>
-                    <h4>Clarity</h4>
-                    <p>We turn financial complexity into straightforward guidance that our clients can understand and immediately apply.</p>
-                </div>
-                <div class="usp-card">
-                    <div class="icon"></div>
-                    <h4>Customisation</h4>
-                    <p>We tailor every service to the unique needs, goals, and context of each client — no generic templates.</p>
-                </div>
-                <div class="usp-card">
-                    <div class="icon"></div>
-                    <h4>Strategic Insight</h4>
-                    <p>We go beyond reporting. We help you understand what your numbers mean and how to use that insight to achieve growth, reduce risk, and improve performance.</p>
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="page-hero">
+            <h1>About Us</h1>
+            <p>Learn more about who we are and what drives us</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>Who We Are</h2>
+                <div class="grid-2">
+                    <div>
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #4a5568; line-height: 1.8;">We are a forward-thinking financial consulting team driven by analytical insight, strategic thinking, and a commitment to measurable results. Our expertise lies in understanding financial patterns, identifying risks and opportunities, and translating complex data into simple, actionable strategy.</p>
+                        <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.8;">Our background in financial analysis, planning, and advisory work allows us to bridge the gap between raw numbers and strategic decision-making. We combine professional knowledge with modern financial tools to provide guidance that is both accurate and practical.</p>
+                    </div>
+                    <div class="image-placeholder">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1470&auto=format&fit=crop" alt="Financial Team" id="aboutImage">
+                        <div class="placeholder-text"></div>
+                        <div class="image-credit">Photo: <a href="https://unsplash.com" target="_blank">Unsplash</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-intro">A focused, professional set of services aligned with modern financial consultancy best practices.</p>
-            
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>General Financial Consulting</h3>
-                    <ul class="service-list">
+        <section style="background: white;">
+            <div class="container">
+                <h2 style="text-align: center;">Our Unique Selling Point</h2>
+                <p style="font-size: 1.8rem; color: #00d4ff; font-weight: 700; text-align: center; margin-bottom: 1rem;">Insight-Driven Strategy With a Human Touch</p>
+                <p class="section-intro">What makes us different is our ability to blend technical financial expertise with a clear, supportive, and personalised approach. We don't just analyse numbers — we interpret them in ways that help our clients understand, plan, and take confident action.</p>
+                
+                <div class="grid-3">
+                    <div class="card" style="border-left: 5px solid #00d4ff;">
+                        <h3>⭐ Clarity</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We turn financial complexity into straightforward guidance that our clients can understand and immediately apply.</p>
+                    </div>
+                    <div class="card" style="border-left: 5px solid #00d4ff;">
+                        <h3>⭐ Customisation</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We tailor every service to the unique needs, goals, and context of each client — no generic templates.</p>
+                    </div>
+                    <div class="card" style="border-left: 5px solid #00d4ff;">
+                        <h3>⭐ Strategic Insight</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We go beyond reporting. We help you understand what your numbers mean and how to use that insight to achieve growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services" class="page">
+        <div class="page-hero">
+            <h1>Our Services</h1>
+            <p>Comprehensive financial consulting solutions tailored to your needs</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <h2>General Financial Consulting Services</h2>
+                <p class="section-intro">A focused, professional set of services aligned with modern financial consultancy best practices.</p>
+                
+                <div class="card">
+                    <h3>💼 Core Services</h3>
+                    <ul class="styled-list">
                         <li>Business financial analysis</li>
                         <li>Budgeting and financial planning</li>
                         <li>Cash flow management</li>
@@ -1085,607 +825,519 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Specialist Areas -->
-    <section class="specialist-areas">
-        <div class="container">
-            <h2>Our Specialist Focus Areas</h2>
-            <p class="section-intro">We focus on key areas that deliver the greatest strategic impact for our clients.</p>
-            
-            <div class="specialist-card">
-                <div>
-                    <h3><span class="number">1</span> Financial Planning & Analysis (FP&A)</h3>
-                    <p>We support clients in understanding their financial position, modelling future scenarios, and building strategies that improve stability and long-term performance.</p>
+        <section style="background: white;">
+            <div class="container">
+                <h2>Our Specialist Focus Areas</h2>
+                <p class="section-intro">We focus on key areas that deliver the greatest strategic impact for our clients.</p>
+                
+                <div class="specialist-card">
+                    <div>
+                        <h3><span class="number">1</span> Financial Planning & Analysis (FP&A)</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We support clients in understanding their financial position, modelling future scenarios, and building strategies that improve stability and long-term performance.</p>
+                    </div>
+                    <div class="image-placeholder specialist-image">
+                        <img src="https://images.unsplash.com/photo-1758518729841-308509f69a7f?q=80&w=1931&auto=format&fit=crop" alt="Financial Planning" id="specialist1Image">
+                        <div class="placeholder-text">📈 Financial Planning</div>
+                        <div class="image-credit">Photo: <a href="https://unsplash.com" target="_blank">Unsplash</a></div>
+                    </div>
                 </div>
-                <div class="specialist-image">
-                    <img src="https://images.unsplash.com/photo-1758518729841-308509f69a7f?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Financial Planning" id="specialist1Image">
-                    <div class="placeholder-text"></div>
-                    <div class="image-credit" style="display: none;" id="specialist1Credit">
-                        Photo: <a href="#" target="_blank">Source</a>
+
+                <div class="specialist-card">
+                    <div>
+                        <h3><span class="number">2</span> Data Analytics for Financial Decision-Making</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We use data-driven methods to uncover financial patterns, identify risks, and highlight opportunities for operational improvement and growth.</p>
+                    </div>
+                    <div class="image-placeholder specialist-image">
+                        <img src="https://media.istockphoto.com/id/2214259306/photo/focused-woman-analyzing-data-on-a-blue-screen.jpg?s=1024x1024&w=is&k=20&c=AMKZP8qvSB76Oul5YIdkGPP1jJEK-_9VFYakKfk3kf8=" alt="Data Analytics" id="specialist2Image">
+                        <div class="placeholder-text">💻 Data Analytics</div>
+                        <div class="image-credit">Photo: <a href="https://istockphoto.com" target="_blank">iStock</a></div>
+                    </div>
+                </div>
+
+                <div class="specialist-card">
+                    <div>
+                        <h3><span class="number">3</span> Finance in the Digital Economy</h3>
+                        <p style="color: #4a5568; line-height: 1.7;">We help clients navigate the digital transformation of finance — from digital budgeting tools to understanding financial technology trends that impact decision-making.</p>
+                    </div>
+                    <div class="image-placeholder specialist-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1661311854942-81b6b5d12198?q=80&w=1469&auto=format&fit=crop" alt="Digital Finance" id="specialist3Image">
+                        <div class="placeholder-text">🌐 Digital Finance</div>
+                        <div class="image-credit">Photo: <a href="https://unsplash.com" target="_blank">Unsplash</a></div>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div class="specialist-card">
-                <div>
-                    <h3><span class="number">2</span> Data Analytics for Financial Decision-Making</h3>
-                    <p>We use data-driven methods to uncover financial patterns, identify risks, and highlight opportunities for operational improvement and growth.</p>
-                </div>
-                <div class="specialist-image">
-                    <img src="https://media.istockphoto.com/id/2214259306/photo/focused-woman-analyzing-data-on-a-blue-screen.jpg?s=1024x1024&w=is&k=20&c=AMKZP8qvSB76Oul5YIdkGPP1jJEK-_9VFYakKfk3kf8=" alt="Data Analytics" id="specialist2Image">
-                    <div class="placeholder-text"></div>
-                    <div class="image-credit" style="display: none;" id="specialist2Credit">
-                        Photo: <a href="#" target="_blank">Source</a>
+    <!-- INDUSTRY LINKS PAGE -->
+    <div id="links" class="page">
+        <div class="page-hero">
+            <h1>Top UK Financial Consulting Firms</h1>
+            <p>Leading companies shaping the financial consulting industry</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <p class="section-intro">Explore leading financial consulting companies in the UK, ranked among the top for their expertise, innovation, and client impact.</p>
+                
+                <div class="grid-3">
+                    <div class="link-card">
+                        <div class="company-number">1</div>
+                        <h3>McKinsey & Company UK</h3>
+                        <div class="badge">Top Ranked</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">McKinsey's UK site provides insights on financial services strategy, digital transformation, risk, and regulatory change.</p>
+                        <a href="https://www.mckinsey.com/uk" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">2</div>
+                        <h3>Boston Consulting Group UK</h3>
+                        <div class="badge">Top Ranked</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">BCG's UK portal covers financial services consulting, including fintech, payments, risk, and operational transformation.</p>
+                        <a href="https://www.bcg.com/en-gb" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">3</div>
+                        <h3>Deloitte UK</h3>
+                        <div class="badge">Top Provider</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Deloitte's UK site offers corporate finance, restructuring, risk advisory, and regulatory consulting.</p>
+                        <a href="https://www2.deloitte.com/uk/en.html" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">4</div>
+                        <h3>PwC UK</h3>
+                        <div class="badge">Featured Firm</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">PwC UK provides consulting across deals, tax, audit, and financial risk with sector-specific insights.</p>
+                        <a href="https://www.pwc.co.uk" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">5</div>
+                        <h3>EY UK</h3>
+                        <div class="badge">Top Firm</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">EY's UK site focuses on financial risk, compliance, wealth management, and transaction advisory.</p>
+                        <a href="https://www.ey.com/en_uk" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">6</div>
+                        <h3>KPMG UK</h3>
+                        <div class="badge">Leading Firm</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">KPMG UK provides services in corporate finance, restructuring, audit, and financial risk.</p>
+                        <a href="https://kpmg.com/uk" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">7</div>
+                        <h3>Accenture UK</h3>
+                        <div class="badge">Recognized</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Accenture UK offers consulting in digital banking, payments, cybersecurity, and cloud transformation.</p>
+                        <a href="https://www.accenture.com/gb-en" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">8</div>
+                        <h3>Oliver Wyman UK</h3>
+                        <div class="badge">Top Consultancy</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Oliver Wyman specializes in risk management, financial modelling, and regulatory strategy.</p>
+                        <a href="https://www.oliverwyman.com" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">9</div>
+                        <h3>Bain & Company UK</h3>
+                        <div class="badge">Top Ranked</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Bain UK focuses on private equity, banking, insurance, and performance improvement.</p>
+                        <a href="https://www.bain.com/offices/london/" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="company-number">10</div>
+                        <h3>HewardMills</h3>
+                        <div class="badge">Boutique Specialist</div>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">UK-based consultancy specializing in financial compliance, data protection, and regulatory advisory.</p>
+                        <a href="https://hewardmills.com" target="_blank" style="color: #00d4ff; text-decoration: none; font-weight: 600;">Visit Website →</a>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
 
-            <div class="specialist-card">
-                <div>
-                    <h3><span class="number">3</span> Finance in the Digital Economy</h3>
-                    <p>We help clients navigate the digital transformation of finance — from digital budgeting tools to understanding financial technology trends that impact decision-making.</p>
+    <!-- RESOURCES PAGE -->
+    <div id="resources" class="page">
+        <div class="page-hero">
+            <h1>Useful Resources</h1>
+            <p>Essential links to leading financial consulting resources and industry insights</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="resource-card">
+                    <h3>1. EY — UK (Ernst & Young)</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">EY is one of the UK's leading financial and professional services firms, offering insights into consulting, finance transformation, and strategic decision-making.</p>
+                    <a href="https://www.ey.com/en_uk" target="_blank" class="resource-link">Visit EY UK →</a>
                 </div>
-                <div class="specialist-image">
-                    <img src="https://plus.unsplash.com/premium_photo-1661311854942-81b6b5d12198?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Digital Finance" id="specialist3Image">
-                    <div class="placeholder-text"></div>
-                    <div class="image-credit" style="display: none;" id="specialist3Credit">
-                        Photo: <a href="#" target="_blank">Source</a>
+
+                <div class="resource-card">
+                    <h3>2. Deloitte UK</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">Deloitte provides audit, consulting, financial advisory, and risk management services with sector-specific insights.</p>
+                    <a href="https://www.deloitte.com/uk/en.html" target="_blank" class="resource-link">Visit Deloitte UK →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>3. Consultancy UK — Top Consulting Firms Ranking</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">This site ranks the top consulting firms in the UK across multiple specialisations including finance and data analytics.</p>
+                    <a href="https://www.consultancy.uk/rankings/2025" target="_blank" class="resource-link">Visit Consultancy UK →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>4. MConsultingPrep — Finance Consulting Overview</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">Provides global rankings of finance consulting firms and explains key services offered in financial consulting.</p>
+                    <a href="https://mconsultingprep.com/top-finance-consulting-firms" target="_blank" class="resource-link">Visit MConsultingPrep →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>5. Digital Reference — UK Investment Consulting Insights</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">Highlights UK investment consulting firms and trends in value creation and financial advisory work.</p>
+                    <a href="https://www.digitalreference.co/insights/finance-professionals/investment-consulting-services-in-the-uk" target="_blank" class="resource-link">Visit Digital Reference →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>6. The Consulting Report — Top Financial Services Consultants</h3>
+                    <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">Profiles top financial services consultants and leaders shaping the financial industry.</p>
+                    <a href="https://www.theconsultingreport.com/the-top-25-financial-services-consultants-and-leaders-of-2025/" target="_blank" class="resource-link">Visit The Consulting Report →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DOCUMENTS PAGE -->
+    <div id="documents" class="page">
+        <div class="page-hero">
+            <h1>Downloadable Documents</h1>
+            <p>Access our comprehensive financial consulting documents and resources</p>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="grid-3">
+                    <div class="document-card">
+                        <div class="document-icon">📄</div>
+                        <div class="badge">Original Document</div>
+                        <h3>Financial Consulting Overview</h3>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">This original document introduces the core principles of financial consulting, including FP&A, finance transformation, and data-driven advisory approaches.</p>
+                        <a href="#" class="download-btn" onclick="alert('Add your document link here'); return false;">Download Word Doc</a>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">📊</div>
+                        <div class="badge">External Source</div>
+                        <h3>External Financial Report</h3>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">This PDF represents an external financial report, typically used to analyse financial trends, market performance, or sector insights.</p>
+                        <a href="#" class="download-btn" onclick="alert('Add your PDF link here'); return false;">Download PDF</a>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">📑</div>
+                        <div class="badge">External Source</div>
+                        <h3>External Finance Presentation</h3>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">A sample external presentation containing insights into financial strategy, finance transformation, or consulting best practices.</p>
+                        <a href="#" class="download-btn" onclick="alert('Add your PowerPoint link here'); return false;">Download PowerPoint</a>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">📈</div>
+                        <div class="badge">External Source</div>
+                        <h3>External Financial Data Spreadsheet</h3>
+                        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">This spreadsheet contains sample financial data representing the kind of dataset used in financial analysis and FP&A work.</p>
+                        <a href="#" class="download-btn" onclick="alert('Add your Excel link here'); return false;">Download Excel File</a>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
+
+    <!-- VIDEOS PAGE -->
+    <div id="videos" class="page">
+        <div class="page-hero">
+            <h1>Educational Resources</h1>
+            <p>Learn from our curated collection of financial consulting videos</p>
         </div>
-    </section>
 
-    <!-- Useful Resources Section -->
-    <section class="resources" id="resources">
-        <div class="container">
-            <h2>Useful Resources</h2>
-            <p class="section-intro">Essential links to leading financial consulting resources, industry insights, and professional guidance.</p>
-            
-            <div class="resource-card">
-                <h4>1. EY — UK (Ernst & Young)</h4>
-                <p>EY is one of the UK's leading financial and professional services firms, offering insights into consulting, finance transformation, and strategic decision-making. Their website includes industry reports, regulatory updates, and guidance on building financial resilience.</p>
-                <a href="https://www.ey.com/en_uk" target="_blank" class="resource-link">
-                    Visit EY UK →
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <h4>2. Deloitte UK</h4>
-                <p>Deloitte provides audit, consulting, financial advisory, and risk management services. Their site features research on financial transformation, digital finance, economic trends, and sector-specific insights relevant to modern financial consulting.</p>
-                <a href="https://www.deloitte.com/uk/en.html" target="_blank" class="resource-link">
-                    Visit Deloitte UK →
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <h4>3. Consultancy UK — Top Consulting Firms Ranking</h4>
-                <p>This site ranks the top consulting firms in the UK across multiple specialisations, including finance, data analytics, and digital strategy. It offers industry analysis, firm comparisons, and sector insights useful for understanding competitive positioning.</p>
-                <a href="https://www.consultancy.uk/rankings/2025" target="_blank" class="resource-link">
-                    Visit Consultancy UK →
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <h4>4. MConsultingPrep — Finance Consulting Overview</h4>
-                <p>This site provides global rankings of finance consulting firms and explains the key services offered in financial consulting. It is useful for understanding industry standards, methodologies, and expectations for finance consultants.</p>
-                <a href="https://mconsultingprep.com/top-finance-consulting-firms" target="_blank" class="resource-link">
-                    Visit MConsultingPrep →
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <h4>5. Digital Reference — UK Investment Consulting Insights</h4>
-                <p>Digital Reference highlights UK investment consulting firms, showcasing how specialists support private equity, corporate finance, and portfolio strategy. This site is ideal for understanding trends in value creation and financial advisory work.</p>
-                <a href="https://www.digitalreference.co/insights/finance-professionals/investment-consulting-services-in-the-uk" target="_blank" class="resource-link">
-                    Visit Digital Reference →
-                </a>
-            </div>
-
-            <div class="resource-card">
-                <h4>6. The Consulting Report — Top Financial Services Consultants</h4>
-                <p>This site profiles top financial services consultants and leaders shaping the financial industry. It gives insight into the skills, innovations, and strategic approaches used by leading financial consultants.</p>
-                <a href="https://www.theconsultingreport.com/the-top-25-financial-services-consultants-and-leaders-of-2025/" target="_blank" class="resource-link">
-                    Visit The Consulting Report →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Documents Section -->
-    <section class="documents" id="documents">
-        <div class="container">
-            <h2>Downloadable Documents</h2>
-            <p class="section-intro">Access our comprehensive financial consulting documents, reports, and resources.</p>
-            
-            <div class="documents-grid">
-                <div class="document-card">
-                    <div class="document-icon">📄</div>
-                    <div class="document-badge">Original Document</div>
-                    <h4>Financial Consulting Overview</h4>
-                    <p>This original document introduces the core principles of financial consulting, including FP&A, finance transformation, and data-driven advisory approaches. It reflects your consultancy's branding and theme.</p>
-                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual document link here.'); return false;">Download Word Doc</a>
-                </div>
-
-                <div class="document-card">
-                    <div class="document-icon">📊</div>
-                    <div class="document-badge">External Source</div>
-                    <h4>External Financial Report</h4>
-                    <p>This PDF represents an external financial report, typically used to analyse financial trends, market performance, or sector insights. A comprehensive guide to industry standards.</p>
-                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual PDF link here.'); return false;">Download PDF</a>
-                </div>
-
-                <div class="document-card">
-                    <div class="document-icon">📑</div>
-                    <div class="document-badge">External Source</div>
-                    <h4>External Finance Presentation</h4>
-                    <p>A sample external presentation containing insights into financial strategy, finance transformation, or consulting best practices. Ideal for linking industry information or thought-leadership decks.</p>
-                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual PowerPoint link here.'); return false;">Download PowerPoint</a>
-                </div>
-
-                <div class="document-card">
-                    <div class="document-icon">📈</div>
-                    <div class="document-badge">External Source</div>
-                    <h4>External Financial Data Spreadsheet</h4>
-                    <p>This spreadsheet contains sample financial data (years, revenues) representing the kind of dataset used in financial analysis, forecasting, and FP&A work.</p>
-                    <a href="#" class="download-btn" onclick="alert('This is a placeholder. Add your actual Excel file link here.'); return false;">Download Excel File</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industry Links Section -->
-    <section class="industry-links" id="links">
-        <div class="container">
-            <h2>Top UK Financial Consulting Firms</h2>
-            <p class="section-intro">Explore leading financial consulting companies in the UK, ranked among the top for their expertise, innovation, and client impact.</p>
-            
-            <div class="links-grid">
-                <div class="link-card">
-                    <div class="company-number">1</div>
-                    <h4>McKinsey & Company UK</h4>
-                    <div class="badge">Top Ranked</div>
-                    <p>McKinsey's UK site provides insights on financial services strategy, digital transformation, risk, and regulatory change. Features research reports, industry analyses, and case studies tailored to UK banks and insurers.</p>
-                    <a href="https://www.mckinsey.com/uk" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">2</div>
-                    <h4>Boston Consulting Group (BCG) UK</h4>
-                    <div class="badge">Top Ranked</div>
-                    <p>BCG's UK portal covers financial services consulting, including fintech, payments, risk, and operational transformation. The site features thought leadership, industry forecasts, and client impact stories.</p>
-                    <a href="https://www.bcg.com/en-gb" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">3</div>
-                    <h4>Deloitte UK — Financial Advisory</h4>
-                    <div class="badge">Top Provider</div>
-                    <p>Deloitte's UK site offers corporate finance, restructuring, risk advisory, and regulatory consulting. Includes industry insights, service breakdowns, and guidance for financial institutions.</p>
-                    <a href="https://www2.deloitte.com/uk/en.html" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">4</div>
-                    <h4>PwC UK — Financial Services</h4>
-                    <div class="badge">Featured Firm</div>
-                    <p>PwC UK provides consulting across deals, tax, audit, and financial risk. The site includes research publications, regulatory updates, and sector-specific insights for banks, insurers, and asset managers.</p>
-                    <a href="https://www.pwc.co.uk" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">5</div>
-                    <h4>EY UK — Financial Services</h4>
-                    <div class="badge">Top Firm</div>
-                    <p>EY's UK site focuses on financial risk, compliance, wealth management, and transaction advisory. Features industry reports, regulatory guidance, and transformation case studies.</p>
-                    <a href="https://www.ey.com/en_uk" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">6</div>
-                    <h4>KPMG UK — Financial Advisory</h4>
-                    <div class="badge">Leading Firm</div>
-                    <p>KPMG UK provides services in corporate finance, restructuring, audit, and financial risk. Their site features insights on UK regulatory changes, market trends, and sector-specific consulting.</p>
-                    <a href="https://kpmg.com/uk" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">7</div>
-                    <h4>Accenture UK — Financial Services</h4>
-                    <div class="badge">Recognized</div>
-                    <p>Accenture UK offers consulting in digital banking, payments, cybersecurity, cloud transformation, and financial operations. Includes case studies, innovation research, and technology-driven insights.</p>
-                    <a href="https://www.accenture.com/gb-en" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">8</div>
-                    <h4>Oliver Wyman UK</h4>
-                    <div class="badge">Top Consultancy</div>
-                    <p>Oliver Wyman's UK site specializes in risk management, financial modelling, regulatory strategy, and insurance consulting. Features deep analytical reports and industry-leading research.</p>
-                    <a href="https://www.oliverwyman.com" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">9</div>
-                    <h4>Bain & Company UK</h4>
-                    <div class="badge">Top Ranked</div>
-                    <p>Bain UK focuses on private equity, banking, insurance, and performance improvement. Their site includes case studies, industry insights, and transformation frameworks used by major UK financial institutions.</p>
-                    <a href="https://www.bain.com/offices/london/" target="_blank">Visit Website →</a>
-                </div>
-
-                <div class="link-card">
-                    <div class="company-number">10</div>
-                    <h4>HewardMills</h4>
-                    <div class="badge">Boutique Specialist</div>
-                    <p>HewardMills is a UK-based consultancy specializing in financial compliance, data protection, and regulatory advisory. Their site highlights services in GDPR, governance, and risk management.</p>
-                    <a href="https://hewardmills.com" target="_blank">Visit Website →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Videos Section -->
-    <section class="videos" id="videos">
-        <div class="container">
-            <h2>Educational Resources</h2>
-            <p class="section-intro">Learn from our curated collection of financial consulting and analysis videos.</p>
-            
-            <div class="video-grid">
-                <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=U0wzvBnq_-8" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/U0wzvBnq_-8/maxresdefault.jpg" alt="Financial Statement Analysis">
-                            <div class="play-button">
-                                <span class="play-icon">▶</span>
+        <section>
+            <div class="container">
+                <div class="grid-3">
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=U0wzvBnq_-8" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/U0wzvBnq_-8/maxresdefault.jpg" alt="Financial Statement Analysis">
+                                <div class="play-button"><span class="play-icon">▶</span></div>
                             </div>
+                        </a>
+                        <div class="video-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Financial Statement Analysis</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Breaking down the essentials of analyzing financial statements, including profit analysis and cash flow interpretation.</p>
+                            <a href="https://www.youtube.com/watch?v=U0wzvBnq_-8" target="_blank" class="video-link">Watch on YouTube →</a>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <h4>Financial Statement Analysis</h4>
-                        <p>Breaking down the essentials of analyzing financial statements, including profit analysis, cash flow interpretation, and performance insights.</p>
-                        <a href="https://www.youtube.com/watch?v=U0wzvBnq_-8" target="_blank" class="video-link">Watch on YouTube →</a>
                     </div>
-                </div>
 
-                <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=1AUBZbbk53g" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/1AUBZbbk53g/maxresdefault.jpg" alt="3-Statement Financial Model">
-                            <div class="play-button">
-                                <span class="play-icon">▶</span>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=1AUBZbbk53g" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/1AUBZbbk53g/maxresdefault.jpg" alt="3-Statement Model">
+                                <div class="play-button"><span class="play-icon">▶</span></div>
                             </div>
+                        </a>
+                        <div class="video-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Build a 3-Statement Financial Model</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">How financial consultants build integrated models for forecasting, planning, and strategic decision-making.</p>
+                            <a href="https://www.youtube.com/watch?v=1AUBZbbk53g" target="_blank" class="video-link">Watch on YouTube →</a>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <h4>Build a 3-Statement Financial Model</h4>
-                        <p>A practical walkthrough showing how financial consultants build integrated models for forecasting, planning, and strategic decision-making.</p>
-                        <a href="https://www.youtube.com/watch?v=1AUBZbbk53g" target="_blank" class="video-link">Watch on YouTube →</a>
                     </div>
-                </div>
 
-                <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=wM0PL2JI65g" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/wM0PL2JI65g/maxresdefault.jpg" alt="Mastering Financial Modelling">
-                            <div class="play-button">
-                                <span class="play-icon">▶</span>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=wM0PL2JI65g" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/wM0PL2JI65g/maxresdefault.jpg" alt="Financial Modelling">
+                                <div class="play-button"><span class="play-icon">▶</span></div>
                             </div>
+                        </a>
+                        <div class="video-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Mastering Financial Modelling</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Best practices in financial modelling for analysing scenarios and supporting investment decisions.</p>
+                            <a href="https://www.youtube.com/watch?v=wM0PL2JI65g" target="_blank" class="video-link">Watch on YouTube →</a>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <h4>Mastering Financial Modelling</h4>
-                        <p>Best practices in financial modelling, a critical skill for analysing scenarios, supporting investment decisions, and advising clients with data-driven insights.</p>
-                        <a href="https://www.youtube.com/watch?v=wM0PL2JI65g" target="_blank" class="video-link">Watch on YouTube →</a>
                     </div>
-                </div>
 
-                <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=UGRGjIAuaS4" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/UGRGjIAuaS4/maxresdefault.jpg" alt="Finance Transformation">
-                            <div class="play-button">
-                                <span class="play-icon">▶</span>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=UGRGjIAuaS4" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/UGRGjIAuaS4/maxresdefault.jpg" alt="Finance Transformation">
+                                <div class="play-button"><span class="play-icon">▶</span></div>
                             </div>
+                        </a>
+                        <div class="video-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Finance Transformation Success</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Core elements behind successful finance transformation programmes and process redesign.</p>
+                            <a href="https://www.youtube.com/watch?v=UGRGjIAuaS4" target="_blank" class="video-link">Watch on YouTube →</a>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <h4>Finance Transformation Success</h4>
-                        <p>Core elements behind successful finance transformation programmes, relevant to consultants working in financial improvement and process redesign.</p>
-                        <a href="https://www.youtube.com/watch?v=UGRGjIAuaS4" target="_blank" class="video-link">Watch on YouTube →</a>
                     </div>
-                </div>
 
-                <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=gaKjMTBIn-g" target="_blank" style="text-decoration: none;">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/gaKjMTBIn-g/maxresdefault.jpg" alt="Introduction to FP&A">
-                            <div class="play-button">
-                                <span class="play-icon">▶</span>
+                    <div class="video-card">
+                        <a href="https://www.youtube.com/watch?v=gaKjMTBIn-g" target="_blank" style="text-decoration: none;">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/gaKjMTBIn-g/maxresdefault.jpg" alt="Introduction to FP&A">
+                                <div class="play-button"><span class="play-icon">▶</span></div>
                             </div>
+                        </a>
+                        <div class="video-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Introduction to FP&A</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">A beginner-friendly guide to FP&A, explaining budgeting, forecasting, and variance analysis.</p>
+                            <a href="https://www.youtube.com/watch?v=gaKjMTBIn-g" target="_blank" class="video-link">Watch on YouTube →</a>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <h4>Introduction to FP&A</h4>
-                        <p>A beginner-friendly guide introducing FP&A, explaining budgeting, forecasting, variance analysis, and how finance teams support strategic business performance.</p>
-                        <a href="https://www.youtube.com/watch?v=gaKjMTBIn-g" target="_blank" class="video-link">Watch on YouTube →</a>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
+
+    <!-- IMAGES PAGE -->
+    <div id="images" class="page">
+        <div class="page-hero">
+            <h1>Financial Consulting Image Gallery</h1>
+            <p>Professional images showcasing financial consulting and strategic planning</p>
         </div>
-    </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="icon"></div>
-                    <h4>Strategic Thinking</h4>
-                    <p>We combine strategic thinking with modern analytical tools to deliver exceptional results.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon"></div>
-                    <h4>Clear Communication</h4>
-                    <p>We prioritise clear communication and transparency in everything we do.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon"></div>
-                    <h4>Measurable Outcomes</h4>
-                    <p>We focus on delivering measurable, meaningful outcomes that drive real change.</p>
-                </div>
-                <div class="why-item">
-                    <div class="icon"></div>
-                    <h4>Personalised Approach</h4>
-                    <p>We take a personalised approach — your goals shape our strategy.</p>
+        <section>
+            <div class="container">
+                <div class="grid-3">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Financial Consulting" id="gallery1">
+                            <div class="placeholder-text">Financial Consulting Meeting</div>
+                            <div class="image-credit">Photo: <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">Shutterstock</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Financial Consulting — Shutterstock</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">A professional consulting meeting with charts and financial reports.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">View on Shutterstock</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Business Finance Analysis" id="gallery2">
+                            <div class="placeholder-text">Business Finance Analysis</div>
+                            <div class="image-credit">Photo: <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">iStock</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Business Finance Analysis — iStock</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Business advisors reviewing revenue and analytics during a planning session.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">View on iStock</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Team Meeting" id="gallery3">
+                            <div class="placeholder-text">Team Meeting on Strategy</div>
+                            <div class="image-credit">Photo: <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">Dreamstime</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Team Meeting — Dreamstime</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">A business team collaborating on financial statements and performance metrics.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">View on Dreamstime</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Financial Analysis" id="gallery4">
+                            <div class="placeholder-text">Financial Analysis & Planning</div>
+                            <div class="image-credit">Photo: <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">Getty Images</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Financial Analysis — Getty Images</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Professionals analysing digital charts and financial dashboards.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">View on Getty Images</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Consulting Icons" id="gallery5">
+                            <div class="placeholder-text">Consulting Icon Set</div>
+                            <div class="image-credit">Photo: <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">Shutterstock</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Consulting Icons — Shutterstock</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Financial consulting icons including trackers and balance sheets.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">View on Shutterstock</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Consulting Vector" id="gallery6">
+                            <div class="placeholder-text">Financial Consulting Vector</div>
+                            <div class="image-credit">Photo: <a href="https://www.vectorstock.com" target="_blank">VectorStock</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Consulting Vector — VectorStock</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">A modern illustration of a consultant presenting financial data.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.vectorstock.com" target="_blank">View on VectorStock</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Consulting Tools" id="gallery7">
+                            <div class="placeholder-text">Consulting & Analysis</div>
+                            <div class="image-credit">Photo: <a href="https://pixabay.com" target="_blank">Pixabay</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Consulting Tools — Pixabay (Free)</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Financial analysis tools such as calculators, charts, and planners.</p>
+                            <div class="gallery-source">🔗 <a href="https://pixabay.com" target="_blank">View on Pixabay</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Business Meeting" id="gallery8">
+                            <div class="placeholder-text">Business Meeting</div>
+                            <div class="image-credit">Photo: <a href="https://www.vecteezy.com" target="_blank">Vecteezy</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Business Meeting — Vecteezy (Free)</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Consultants reviewing documents and financial insights.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.vecteezy.com" target="_blank">View on Vecteezy</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Finance Team" id="gallery9">
+                            <div class="placeholder-text">Finance Team Review</div>
+                            <div class="image-credit">Photo: <a href="https://www.shutterstock.com" target="_blank">Shutterstock</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Finance Team — Shutterstock</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">Consultants reviewing financial projections and budgets.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.shutterstock.com" target="_blank">View on Shutterstock</a></div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="" alt="Consultant Working" id="gallery10">
+                            <div class="placeholder-text">Consultant Working</div>
+                            <div class="image-credit">Photo: <a href="https://www.pexels.com" target="_blank">Pexels</a></div>
+                        </div>
+                        <div class="gallery-info">
+                            <h3 style="color: #1e3a5f; margin-bottom: 0.75rem;">Consultant at Laptop — Pexels (Free)</h3>
+                            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">A consultant analysing financial data on a laptop.</p>
+                            <div class="gallery-source">🔗 <a href="https://www.pexels.com" target="_blank">View on Pexels</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="page-hero">
+            <h1>Get in Touch</h1>
+            <p>Ready to elevate your financial strategy? Let's connect</p>
         </div>
-    </section>
 
-    <!-- Image Gallery Section -->
-    <section class="image-gallery" id="images">
-        <div class="container">
-            <h2>Financial Consulting Image Gallery</h2>
-            <p class="section-intro">Professional images showcasing financial consulting, analysis, and strategic planning in action.</p>
-            
-            <div class="gallery-grid">
-                <!-- Image 1 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Financial Consulting Meeting" id="gallery1">
-                        <div class="placeholder-text">Financial Consulting Meeting</div>
-                        <div class="image-credit" >
-                            Photo: <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">Shutterstock</a>
+        <section>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Student Contact Information</h3>
+                        <div class="info-item">
+                            <strong>Email:</strong>
+                            <span>rn25aao@herts.ac.uk</span>
                         </div>
                     </div>
-                    <div class="gallery-info">
-                        <h4>Financial Consulting — Shutterstock</h4>
-                        <p>A professional consulting meeting with charts and financial reports displayed on a desk.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.shutterstock.com/search/financial-consulting" target="_blank">View on Shutterstock</a>
+
+                    <div class="contact-info">
+                        <h3>University Information</h3>
+                        <div class="info-item">
+                            <strong>University:</strong>
+                            <span>University of Hertfordshire</span>
                         </div>
+                        <div class="info-item">
+                            <strong>Address:</strong>
+                            <span>College Lane Campus, Hatfield, Hertfordshire, AL10 9AB, United Kingdom</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Phone:</strong>
+                            <span>+44 (0)1707 284000</span>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.8477896543847!2d-0.24175492346442814!3d51.75253397184558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763d3c908d4e39%3A0x87a4e5e8c7284f6!2sUniversity%20of%20Hertfordshire!5e0!3m2!1sen!2suk!4v1704641234567!5m2!1sen!2suk"
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
 
-                <!-- Image 2 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Business Finance Analysis" id="gallery2">
-                        <div class="placeholder-text">Business Finance Analysis</div>
-                        <div class="image-credit">
-                            Photo: <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">iStock</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Business Finance Analysis — iStock</h4>
-                        <p>Business advisors reviewing revenue, profit, and analytics on a tablet during a financial planning session.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.istockphoto.com/photos/financial-consulting" target="_blank">View on iStock</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 3 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Team Meeting Financial Strategy" id="gallery3">
-                        <div class="placeholder-text">Team Meeting on Strategy</div>
-                        <div class="image-credit">
-                            Photo: <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">Dreamstime</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Team Meeting on Financial Strategy — Dreamstime</h4>
-                        <p>A business team collaborating on financial statements and performance metrics in an office setting.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.dreamstime.com/photos-images/financial-consulting.html" target="_blank">View on Dreamstime</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 4 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Financial Analysis Planning" id="gallery4">
-                        <div class="placeholder-text">Financial Analysis & Planning</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">Getty Images</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Financial Analysis & Planning — Getty Images</h4>
-                        <p>Professionals analysing digital charts and financial dashboards during strategic planning.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.gettyimages.com/photos/financial-consulting" target="_blank">View on Getty Images</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 5 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Consulting Icon Set" id="gallery5">
-                        <div class="placeholder-text">Consulting Icon Set</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">Shutterstock</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Consulting Icon Set — Shutterstock</h4>
-                        <p>A set of financial consulting icons including expense trackers, balance sheets, and financial reports.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.shutterstock.com/search/financial-consulting-services" target="_blank">View on Shutterstock</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 6 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Financial Consulting Vector"id="gallery6">
-                        <div class="placeholder-text">Financial Consulting Vector</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.vectorstock.com/royalty-free-vector/financial-consulting-concept-consultant-vector-28778833" target="_blank">VectorStock</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Financial Consulting Vector — VectorStock</h4>
-                        <p>A modern illustration of a consultant presenting financial data on a large screen.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.vectorstock.com/royalty-free-vector/financial-consulting-concept-consultant-vector-28778833" target="_blank">View on VectorStock</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 7 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Consulting Analysis Tools"  id="gallery7">
-                        <div class="placeholder-text">Consulting & Analysis</div>
-                        <div class="image-credit">
-                            Photo: <a href="https://pixabay.com/images/search/financial%20consulting/" target="_blank">Pixabay</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Consulting & Analysis — Pixabay (Free)</h4>
-                        <p>A royalty-free image showing financial analysis tools such as calculators, charts, and planners.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://pixabay.com/images/search/financial%20consulting/" target="_blank">View on Pixabay</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 8 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Business Meeting Finance Planning" id="gallery8">
-                        <div class="placeholder-text">Business Meeting</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.vecteezy.com/free-photos/financial-consulting" target="_blank">Vecteezy</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Business Meeting for Finance Planning — Vecteezy (Free)</h4>
-                        <p>Consultants reviewing documents, graphs, and financial insights in a collaborative office space.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.vecteezy.com/free-photos/financial-consulting" target="_blank">View on Vecteezy</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 9 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Finance Team Reviewing Data"id="gallery9">
-                        <div class="placeholder-text">Finance Team Review</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.shutterstock.com/search/consulting-tax-finance" target="_blank">Shutterstock</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Finance Team Reviewing Data — Shutterstock</h4>
-                        <p>Two consultants reviewing financial projections, budgets, and investment planning documents.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.shutterstock.com/search/consulting-tax-finance" target="_blank">View on Shutterstock</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Image 10 -->
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="" alt="Financial Consultant at Laptop" id="gallery10">
-                        <div class="placeholder-text">Consultant Working</div>
-                        <div class="image-credit" style="display: none;">
-                            Photo: <a href="https://www.pexels.com/search/Financial%20consultant/" target="_blank">Pexels</a>
-                        </div>
-                    </div>
-                    <div class="gallery-info">
-                        <h4>Financial Consultant Working at Laptop — Pexels (Free)</h4>
-                        <p>A consultant analysing financial data on a laptop in a clean, modern office environment.</p>
-                        <div class="gallery-source">
-                            🔗 <a href="https://www.pexels.com/search/Financial%20consultant/" target="_blank">View on Pexels</a>
-                        </div>
-                    </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="mailto:rn25aao@herts.ac.uk" class="cta-button">Book a Consultation</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="section-intro">Ready to elevate your financial strategy? Contact us to discuss how we can help you achieve clarity, confidence, and sustainable financial growth.</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h4>Student Contact Information</h4>
-                   
-                    <div class="info-item">
-                        <strong>Student ID:</strong>
-                        <span>24142784</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Email:</strong>
-                        <span>rn25aao@herts.ac.uk</span>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h4>University Information</h4>
-                    <div class="info-item">
-                        <strong>University:</strong>
-                        <span>University of Hertfordshire</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Address:</strong>
-                        <span>College Lane Campus, Hatfield, Hertfordshire, AL10 9AB, United Kingdom</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Phone:</strong>
-                        <span>+44 (0)1707 284000</span>
-                    </div>
-                </div>
-
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.8477896543847!2d-0.24175492346442814!3d51.75253397184558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763d3c908d4e39%3A0x87a4e5e8c7284f6!2sUniversity%20of%20Hertfordshire!5e0!3m2!1sen!2suk!4v1704641234567!5m2!1sen!2suk"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="mailto:24142784@herts.ac.uk" class="cta-button">Book a Consultation</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1697,25 +1349,62 @@
     </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
+        // Page Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('navMenu').classList.remove('active');
+            window.scrollTo(0, 0);
         }
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    document.getElementById('navMenu').classList.remove('active');
-                }
-            });
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('navMenu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
         });
+
+        // Image loader function
+        function loadImage(imageId, imageUrl, creditUrl, creditText) {
+            const img = document.getElementById(imageId);
+            if (!img) return;
+            
+            const placeholder = img.parentElement.querySelector('.placeholder-text');
+            const credit = img.parentElement.querySelector('.image-credit');
+            
+            if (imageUrl) {
+                img.src = imageUrl;
+                img.style.display = 'block';
+                if (placeholder) placeholder.style.display = 'none';
+                
+                if (credit && creditUrl && creditText) {
+                    const link = credit.querySelector('a');
+                    if (link) {
+                        link.href = creditUrl;
+                        link.textContent = creditText;
+                    }
+                }
+            }
+        }
+
+        // Example: Load images when ready
+        // loadImage('aboutImage', 'YOUR_IMAGE_URL', 'https://source.com', 'Source Name');
+        // loadImage('gallery1', 'YOUR_IMAGE_URL', null, null);
     </script>
 </body>
 </html>
+                            <strong>Student ID:</strong>
+                            <span>24142784</span>
+                        </div>
+                        <div class="info-item">
